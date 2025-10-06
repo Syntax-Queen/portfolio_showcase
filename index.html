@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Lucide Icons for high-quality icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <style>
         /* Apply Inter font globally and ensure smooth scrolling */
         body {
@@ -21,15 +22,21 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
-            background: #1f2937; /* Gray-800 */
+            background: #1f2937;
+            /* Gray-800 */
         }
+
         ::-webkit-scrollbar-thumb {
-            background: #4b5563; /* Gray-600 */
+            background: #4b5563;
+            /* Gray-600 */
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
-            background: #6b7280; /* Gray-500 */
+            background: #6b7280;
+            /* Gray-500 */
         }
     </style>
 </head>
@@ -38,15 +45,20 @@
     <!-- Navigation Bar -->
     <header class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-md shadow-lg border-b border-gray-800">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <a href="#hero" class="text-xl font-extrabold text-indigo-400 tracking-wider hover:text-indigo-300 transition duration-300">
+            <a href="#hero"
+                class="text-xl font-extrabold text-indigo-400 tracking-wider hover:text-indigo-300 transition duration-300">
                 Queen Adebisi
             </a>
             <!-- Desktop Navigation Links -->
             <nav class="hidden md:flex space-x-6">
-                <a href="#projects" class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium">Projects</a>
-                <a href="#skills" class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium">Skills</a>
-                <a href="#experience" class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium">Experience</a>
-                <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium">Contact</a>
+                <a href="#projects"
+                    class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium">Projects</a>
+                <a href="#skills"
+                    class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium">Skills</a>
+                <a href="#experience"
+                    class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium">Experience</a>
+                <a href="#contact"
+                    class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium">Contact</a>
             </nav>
             <!-- Mobile Menu Button (Placeholder for JS toggle) -->
             <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-800 transition duration-300">
@@ -59,7 +71,8 @@
     <main class="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16">
 
         <!-- 1. Hero / About Section -->
-        <section id="hero" class="py-16 md:py-24 grid md:grid-cols-3 items-center gap-12 border-b border-gray-800 mb-12">
+        <section id="hero"
+            class="py-16 md:py-24 grid md:grid-cols-3 items-center gap-12 border-b border-gray-800 mb-12">
             <div class="md:col-span-2 space-y-6">
                 <p class="text-lg font-semibold text-indigo-400 uppercase tracking-widest">Hello, I'm Queen Adebisi</p>
                 <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight">
@@ -67,31 +80,40 @@
                     <span class="text-gray-400 block mt-2">Software Engineer.</span>
                 </h1>
                 <p class="text-gray-400 text-lg max-w-2xl">
-                    I'm a passionate Full Stack Web Developer based in **Lagos, Nigeria**, specializing in building robust, scalable, and visually compelling applications using modern frameworks like **React, Vue, and Flask**. My focus is on delivering high-quality user experiences and clean, maintainable code.
+                    I'm a passionate Full Stack Web Developer based in **Lagos, Nigeria**, specializing in building
+                    robust, scalable, and visually compelling applications using modern frameworks like **React, Vue,
+                    and Flask**. My focus is on delivering high-quality user experiences and clean, maintainable code.
                 </p>
                 <div class="flex flex-wrap gap-4 pt-4">
-                    <a href="#projects" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300 transform hover:scale-[1.02]">
+                    <a href="#projects"
+                        class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300 transform hover:scale-[1.02]">
                         View Projects
                     </a>
-                    <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 border border-indigo-500 text-base font-medium rounded-xl text-indigo-400 hover:bg-indigo-900 transition duration-300">
+                    <a href="#contact"
+                        class="inline-flex items-center justify-center px-6 py-3 border border-indigo-500 text-base font-medium rounded-xl text-indigo-400 hover:bg-indigo-900 transition duration-300">
                         Get in Touch
                     </a>
                 </div>
                 <!-- Social Icons -->
                 <div class="flex space-x-6 pt-6 text-2xl text-gray-500">
-                    <a href="mailto:adebisiqueen231@gmail.com" class="hover:text-indigo-400 transition duration-300" aria-label="Email"><i data-lucide="mail"></i></a>
-                    <a href="https://github.com/Syntax-Queen" target="_blank" class="hover:text-indigo-400 transition duration-300" aria-label="GitHub"><i data-lucide="github"></i></a>
-                    <a href="https://teamlaunchly.space" target="_blank" class="hover:text-indigo-400 transition duration-300" aria-label="Website"><i data-lucide="globe"></i></a>
-                    <a href="#" target="_blank" class="hover:text-indigo-400 transition duration-300" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="mailto:adebisiqueen231@gmail.com" class="hover:text-indigo-400 transition duration-300"
+                        aria-label="Email"><i data-lucide="mail"></i></a>
+                    <a href="https://github.com/Syntax-Queen" target="_blank"
+                        class="hover:text-indigo-400 transition duration-300" aria-label="GitHub"><i
+                            data-lucide="github"></i></a>
+                    <a href="https://teamlaunchly.space" target="_blank"
+                        class="hover:text-indigo-400 transition duration-300" aria-label="Website"><i
+                            data-lucide="globe"></i></a>
+                    <a href="https://wa.me/2348139704781 " target="_blank"
+                        class="hover:text-indigo-400 transition duration-300" aria-label="LinkedIn"><i
+                            data-lucide="whatsapp"></i></a>
                 </div>
             </div>
             <!-- Profile Image Placeholder -->
             <div class="md:col-span-1 flex justify-center md:justify-end">
                 <div class="w-64 h-64 bg-gray-800 rounded-full border-4 border-indigo-600 overflow-hidden shadow-2xl">
                     <!-- Placeholder for a stylish profile image -->
-                    <img src="https://placehold.co/256x256/27272a/ffffff?text=Q.A." 
-                         alt="Queen Adebisi Profile Picture" 
-                         class="w-full h-full object-cover p-4" />
+                    <img src="Queen.jpg" alt="Queen Adebisi Profile Picture" class="w-full h-full object-cover " />
                 </div>
             </div>
         </section>
@@ -99,11 +121,12 @@
         <!-- 2. Projects Section -->
         <section id="projects" class="py-12 md:py-16">
             <h2 class="text-4xl font-bold mb-10 text-center text-white">Featured Projects</h2>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
+
                 <!-- Project Card 1 -->
-                <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform transition duration-500 hover:scale-[1.02] hover:shadow-indigo-900/50 group">
+                <div
+                    class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform transition duration-500 hover:scale-[1.02] hover:shadow-indigo-900/50 group">
                     <!-- Mock Image/Placeholder -->
                     <div class="h-48 bg-indigo-900/50 flex items-center justify-center border-b border-gray-700">
                         <i data-lucide="message-square-text" class="w-16 h-16 text-indigo-400"></i>
@@ -111,19 +134,25 @@
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold mb-2 text-white">ADC - Ai Dream Chat</h3>
                         <p class="text-gray-400 mb-4 text-sm">
-                            A full-stack, real-time AI-powered conversational application designed for sophisticated user interaction and rapid prototyping.
+                            A full-stack, real-time AI-powered conversational application designed for sophisticated
+                            user interaction and rapid prototyping.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs font-medium bg-indigo-600 text-white px-3 py-1 rounded-full">React</span>
-                            <span class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Flask (Python)</span>
-                            <span class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">TypeScript</span>
-                            <span class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Tailwind CSS</span>
+                            <span class="text-xs font-medium bg-indigo-600 text-white px-3 py-1 rounded-full">Vue</span>
+                            <span class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Flask
+                                (Python)</span>
+                            <span
+                                class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Netlify</span>
+                            <span class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Tailwind
+                                CSS</span>
                         </div>
                         <div class="flex justify-between items-center pt-2">
-                            <a href="#" target="_blank" class="text-indigo-400 hover:text-indigo-300 flex items-center text-sm font-medium">
+                            <a href="#" target="_blank"
+                                class="text-indigo-400 hover:text-indigo-300 flex items-center text-sm font-medium">
                                 <i data-lucide="link" class="w-4 h-4 mr-2"></i> Live Demo
                             </a>
-                            <a href="https://github.com/Syntax-Queen" target="_blank" class="text-gray-400 hover:text-white flex items-center text-sm">
+                            <a href="https://github.com/Syntax-Queen" target="_blank"
+                                class="text-gray-400 hover:text-white flex items-center text-sm">
                                 <i data-lucide="github" class="w-4 h-4"></i>
                             </a>
                         </div>
@@ -131,26 +160,36 @@
                 </div>
 
                 <!-- Project Card 2 -->
-                <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform transition duration-500 hover:scale-[1.02] hover:shadow-indigo-900/50 group">
+                <div
+                    class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform transition duration-500 hover:scale-[1.02] hover:shadow-indigo-900/50 group">
                     <div class="h-48 bg-pink-900/50 flex items-center justify-center border-b border-gray-700">
-                        <i data-lucide="users" class="w-16 h-16 text-pink-400"></i>
+                        <!-- <i data-lucide="users" class="w-16 h-16 text-pink-400"></i> -->
+                        <img src="launchly.png" alt="Queen Adebisi Website Picture"
+                            class="w-full h-full object-cover " />
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold mb-2 text-white">Launchly Team Portal</h3>
                         <p class="text-gray-400 mb-4 text-sm">
-                            A collaborative platform for task management, internal communication, and resource sharing for small and large teams.
+                            Launchly is a modern e-commerce agency that builds high converting websites for fashion,
+                            supermarkets, and skincare brands focused on sleek design, seamless user experience, and
+                            data-driven conversion optimization.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs font-medium bg-pink-600 text-white px-3 py-1 rounded-full">Vue.js</span>
-                            <span class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Node.js</span>
-                            <span class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">PostgreSQL</span>
-                            <span class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Docker</span>
+                            <span class="text-xs font-medium bg-pink-600 text-white px-3 py-1 rounded-full">React</span>
+                            <span
+                                class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Bootstrap</span>
+                            <span
+                                class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">PostgreSQL</span>
+                            <span
+                                class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Docker</span>
                         </div>
                         <div class="flex justify-between items-center pt-2">
-                            <a href="https://teamlaunchly.space" target="_blank" class="text-pink-400 hover:text-pink-300 flex items-center text-sm font-medium">
+                            <a href="https://teamlaunchly.space" target="_blank"
+                                class="text-pink-400 hover:text-pink-300 flex items-center text-sm font-medium">
                                 <i data-lucide="link" class="w-4 h-4 mr-2"></i> Live Demo
                             </a>
-                            <a href="https://github.com/Syntax-Queen" target="_blank" class="text-gray-400 hover:text-white flex items-center text-sm">
+                            <a href="https://github.com/Syntax-Queen" target="_blank"
+                                class="text-gray-400 hover:text-white flex items-center text-sm">
                                 <i data-lucide="github" class="w-4 h-4"></i>
                             </a>
                         </div>
@@ -158,26 +197,34 @@
                 </div>
 
                 <!-- Project Card 3 -->
-                <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform transition duration-500 hover:scale-[1.02] hover:shadow-indigo-900/50 group">
+                <div
+                    class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform transition duration-500 hover:scale-[1.02] hover:shadow-indigo-900/50 group">
                     <div class="h-48 bg-purple-900/50 flex items-center justify-center border-b border-gray-700">
                         <i data-lucide="server" class="w-16 h-16 text-purple-400"></i>
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold mb-2 text-white">Scalable E-Commerce API</h3>
                         <p class="text-gray-400 mb-4 text-sm">
-                            A robust and highly scalable RESTful API built to handle high-volume transactions for a multi-vendor e-commerce platform.
+                            A robust and highly scalable RESTful API built to handle high-volume transactions for a
+                            multi-vendor e-commerce platform.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs font-medium bg-purple-600 text-white px-3 py-1 rounded-full">Python</span>
-                            <span class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Django DRF</span>
-                            <span class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Redis</span>
-                            <span class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">AWS S3</span>
+                            <span
+                                class="text-xs font-medium bg-purple-600 text-white px-3 py-1 rounded-full">Python</span>
+                            <span class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Flask
+                            </span>
+                            <span
+                                class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Redis</span>
+                            <span class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">AWS
+                                S3</span>
                         </div>
                         <div class="flex justify-between items-center pt-2">
-                            <a href="#" target="_blank" class="text-purple-400 hover:text-purple-300 flex items-center text-sm font-medium">
+                            <a href="#" target="_blank"
+                                class="text-purple-400 hover:text-purple-300 flex items-center text-sm font-medium">
                                 <i data-lucide="code" class="w-4 h-4 mr-2"></i> Documentation
                             </a>
-                            <a href="https://github.com/Syntax-Queen" target="_blank" class="text-gray-400 hover:text-white flex items-center text-sm">
+                            <a href="https://github.com/Syntax-Queen" target="_blank"
+                                class="text-gray-400 hover:text-white flex items-center text-sm">
                                 <i data-lucide="github" class="w-4 h-4"></i>
                             </a>
                         </div>
@@ -198,7 +245,7 @@
                     <ul class="space-y-1 text-gray-400 text-sm">
                         <li>React & Redux</li>
                         <li>Vue.js & VueX</li>
-                        <li>Tailwind CSS, SCSS</li>
+                        <li>Tailwind CSS, Bootstrap</li>
                         <li>JavaScript (ES6+), TypeScript</li>
                     </ul>
                 </div>
@@ -208,7 +255,7 @@
                     <h4 class="text-xl font-semibold text-white mb-2">Backend</h4>
                     <ul class="space-y-1 text-gray-400 text-sm">
                         <li>Flask (Python)</li>
-                        <li>Node.js / Express</li>
+                        <li>System Design</li>
                         <li>RESTful API Design</li>
                         <li>Authentication (JWT)</li>
                     </ul>
@@ -218,8 +265,8 @@
                     <i data-lucide="database" class="w-8 h-8 text-purple-400 mb-3"></i>
                     <h4 class="text-xl font-semibold text-white mb-2">Database / DevOps</h4>
                     <ul class="space-y-1 text-gray-400 text-sm">
-                        <li>PostgreSQL, MongoDB</li>
-                        <li>Docker & Kubernetes</li>
+                        <li>PostgreSQL, SQL</li>
+                        <li>Apache, Sqlite</li>
                         <li>AWS (S3, EC2, Lambda)</li>
                         <li>Git & CI/CD</li>
                     </ul>
@@ -227,10 +274,10 @@
                 <!-- General -->
                 <div class="p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-indigo-900/50 transition duration-300">
                     <i data-lucide="code" class="w-8 h-8 text-green-400 mb-3"></i>
-                    <h4 class="text-xl font-semibold text-white mb-2">Methodologies</h4>
+                    <h4 class="text-xl font-semibold text-white mb-2">Testing</h4>
                     <ul class="space-y-1 text-gray-400 text-sm">
-                        <li>Agile/Scrum</li>
-                        <li>Test-Driven Development (TDD)</li>
+                        <li>PostMan</li>
+                        <li>Insomia</li>
                         <li>Code Review</li>
                         <li>Performance Optimization</li>
                     </ul>
@@ -246,19 +293,36 @@
             <div class="relative max-w-4xl mx-auto border-l-4 border-indigo-600 pl-8 pb-10">
                 <span class="absolute -left-2 top-0 w-4 h-4 bg-indigo-600 rounded-full"></span>
                 <p class="text-lg font-semibold text-white">Full Stack Developer</p>
-                <p class="text-indigo-400 text-sm">TechCorp Innovations | 2022 - Present</p>
+                <p class="text-indigo-400 text-sm">Evu Ventures | 2025 - Present</p>
                 <p class="text-gray-400 mt-2">
-                    Led the migration of a legacy monolithic application to a modern microservices architecture using Python/Flask and React. Significantly improved application load times by 40% through optimized database queries and lazy loading.
+                    A web development company specializing in creating responsive, user centered applications. Designed
+                    and prototyped a freelance job matching platform in Figma, then developed its frontend using React,
+                    HTML, CSS, and JavaScript in collaboration with cross-functional teams to align design and business
+                    objectives.
+
                 </p>
             </div>
-            
+
             <!-- Timeline Item 2 -->
             <div class="relative max-w-4xl mx-auto border-l-4 border-gray-700 pl-8 pb-10">
                 <span class="absolute -left-2 top-0 w-4 h-4 bg-gray-700 rounded-full"></span>
-                <p class="text-lg font-semibold text-white">Junior Software Engineer</p>
-                <p class="text-indigo-400 text-sm">Global Web Solutions | 2020 - 2022</p>
+                <p class="text-lg font-semibold text-white">Software Engineer & Technical Instructor</p>
+                <p class="text-indigo-400 text-sm">Pediforte | 2024 - 2025</p>
                 <p class="text-gray-400 mt-2">
-                    Contributed to the development of five client-facing websites, focusing on cross-browser compatibility and responsive design, primarily using HTML, CSS, and basic JavaScript.
+                    A coding academy providing Python, SQL, and system design training, mentoring students in real world
+                    application development and industry-ready projects.
+                </p>
+            </div>
+            <!-- Timeline Item 3 -->
+
+            <div class="relative max-w-4xl mx-auto border-l-4 border-gray-700 pl-8 pb-10">
+                <span class="absolute -left-2 top-0 w-4 h-4 bg-gray-700 rounded-full"></span>
+                <p class="text-lg font-semibold text-white">Full Stack Software Engineer & SaaS Solutions
+                    Developer</p>
+                <p class="text-indigo-400 text-sm">Freelance | 2023 - 2025</p>
+                <p class="text-gray-400 mt-2">
+                  Freelance full stack developer specializing in SaaS solutions, creating responsive, high converting websites and scalable platforms that enhance user experience and drive business growth.
+
                 </p>
             </div>
         </section>
@@ -267,20 +331,23 @@
         <section id="contact" class="py-12 md:py-16 border-t border-gray-800 mt-12 text-center">
             <h2 class="text-4xl font-bold mb-4 text-white">Let's build something great.</h2>
             <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-                Whether you have a job opportunity, a collaboration idea, or just want to connect, feel free to reach out!
+                Whether you have a job opportunity, a collaboration idea, or just want to connect, feel free to reach
+                out!
             </p>
-            
-            <a href="mailto:adebisiqueen231@gmail.com" class="inline-flex items-center justify-center px-8 py-4 border-2 border-indigo-600 text-lg font-bold rounded-xl shadow-lg text-white bg-indigo-600 hover:bg-indigo-700 hover:border-indigo-700 transition duration-300 transform hover:scale-[1.05]">
+
+            <a href="mailto:adebisiqueen231@gmail.com"
+                class="inline-flex items-center justify-center px-8 py-4 border-2 border-indigo-600 text-lg font-bold rounded-xl shadow-lg text-white bg-indigo-600 hover:bg-indigo-700 hover:border-indigo-700 transition duration-300 transform hover:scale-[1.05]">
                 <i data-lucide="send" class="w-6 h-6 mr-3"></i> Send Me an Email
             </a>
-            
+
             <!-- Quick Contact Links -->
             <div class="flex justify-center flex-wrap gap-6 mt-10 text-lg">
                 <p class="text-gray-300 flex items-center">
                     <i data-lucide="phone" class="w-5 h-5 mr-2 text-indigo-400"></i>
                     Lagos, Nigeria
                 </p>
-                <a href="https://github.com/Syntax-Queen" target="_blank" class="text-gray-300 hover:text-indigo-400 flex items-center transition duration-300">
+                <a href="https://github.com/Syntax-Queen" target="_blank"
+                    class="text-gray-300 hover:text-indigo-400 flex items-center transition duration-300">
                     <i data-lucide="github" class="w-5 h-5 mr-2 text-indigo-400"></i>
                     @Syntax-Queen
                 </a>
@@ -303,7 +370,7 @@
 
         // Mobile menu toggle logic
         const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const navLinks = document.querySelector('nav'); 
+        const navLinks = document.querySelector('nav');
 
         // NOTE: Since the current design is desktop-first, we'd typically create a modal/off-canvas menu for mobile.
         // For simplicity in this single file, let's just make the desktop links show/hide on button click for mobile.
@@ -323,10 +390,10 @@
                 </div>
             </div>
         `);
-        
+
         const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
         const closeMenuButton = document.getElementById('close-menu-button');
-        
+
         // Re-initialize icons for the new content
         lucide.createIcons();
 
@@ -342,7 +409,7 @@
 
         mobileMenuButton.addEventListener('click', openMobileMenu);
         closeMenuButton.addEventListener('click', closeMobileMenu);
-        
+
         // Ensure menu closes if a link inside it is clicked
         mobileMenuOverlay.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', closeMobileMenu);
@@ -350,4 +417,5 @@
 
     </script>
 </body>
+
 </html>
