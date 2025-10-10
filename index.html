@@ -5,227 +5,349 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Queen Adebisi | Software Engineer Portfolio</title>
-    <!-- Load Inter font and Tailwind CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Lucide Icons for high-quality icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        /* Apply Inter font globally and ensure smooth scrolling */
         body {
             font-family: 'Inter', sans-serif;
-            @apply bg-gray-900 text-gray-100;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: #f1f5f9;
         }
 
-        /* Custom scrollbar styling for a sleeker look */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 10px;
         }
 
         ::-webkit-scrollbar-track {
-            background: #1f2937;
-            /* Gray-800 */
+            background: #1e293b;
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #4b5563;
-            /* Gray-600 */
-            border-radius: 4px;
+            background: linear-gradient(180deg, #6366f1 0%, #a855f7 100%);
+            border-radius: 5px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: #6b7280;
-            /* Gray-500 */
+            background: linear-gradient(180deg, #4f46e5 0%, #9333ea 100%);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glow-card {
+            transition: all 0.3s ease;
+        }
+
+        .glow-card:hover {
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.3), 0 0 60px rgba(168, 85, 247, 0.2);
+            transform: translateY(-8px);
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .timeline-dot {
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.3);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #6366f1, #a855f7);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .project-image {
+            transition: transform 0.5s ease;
+        }
+
+        .glow-card:hover .project-image {
+            transform: scale(1.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.4);
+        }
+
+        .glass-effect {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .profile-glow {
+            box-shadow: 0 0 60px rgba(99, 102, 241, 0.5), 0 0 120px rgba(168, 85, 247, 0.3);
         }
     </style>
 </head>
 
 <body>
     <!-- Navigation Bar -->
-    <header class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-md shadow-lg border-b border-gray-800">
+    <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <a href="#hero"
-                class="text-xl font-extrabold text-indigo-400 tracking-wider hover:text-indigo-300 transition duration-300">
+                class="text-2xl font-bold gradient-text tracking-wider hover:scale-105 transition-transform duration-300">
                 Queen Adebisi
             </a>
-            <!-- Desktop Navigation Links -->
-            <nav class="hidden md:flex space-x-6">
+            <nav class="hidden md:flex space-x-8">
                 <a href="#projects"
-                    class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium">Projects</a>
+                    class="nav-link text-slate-300 hover:text-white transition duration-300 font-medium">Projects</a>
                 <a href="#skills"
-                    class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium">Skills</a>
+                    class="nav-link text-slate-300 hover:text-white transition duration-300 font-medium">Skills</a>
                 <a href="#experience"
-                    class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium">Experience</a>
+                    class="nav-link text-slate-300 hover:text-white transition duration-300 font-medium">Experience</a>
                 <a href="#contact"
-                    class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium">Contact</a>
+                    class="nav-link text-slate-300 hover:text-white transition duration-300 font-medium">Contact</a>
             </nav>
-            <!-- Mobile Menu Button (Placeholder for JS toggle) -->
-            <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-800 transition duration-300">
-                <i data-lucide="menu" class="w-6 h-6 text-gray-300"></i>
+            <button id="mobile-menu-button"
+                class="md:hidden p-2 rounded-lg hover:bg-slate-800/50 transition duration-300">
+                <i data-lucide="menu" class="w-6 h-6 text-slate-300"></i>
             </button>
         </div>
     </header>
 
-    <!-- Main Content Sections -->
-    <main class="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16">
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 pt-18 pb-16">
 
-        <!-- 1. Hero / About Section -->
-        <section id="hero"
-            class="py-16 md:py-24 grid md:grid-cols-3 items-center gap-12 border-b border-gray-800 mb-12">
+        <!-- Hero Section -->
+        <section id="hero" class="py-16 md:py-24 grid md:grid-cols-3 items-center gap-12 mb-20
+         fade-in">
             <div class="md:col-span-2 space-y-6">
-                <p class="text-lg font-semibold text-indigo-400 uppercase tracking-widest">Hello, I'm Queen Adebisi</p>
-                <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight">
-                    <!-- <span class="text-gray-400 block">Queen Adebisi.<span/> -->
-                    <span class="text-gray-400 block mt-2">Software Engineer.</span>
+                <div class="inline-block">
+                    <p class="text-sm font-bold gradient-text uppercase tracking-widest mb-2">👋 Hello, I'm</p>
+                </div>
+                <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black leading-tight">
+                    <span class="block text-white">Queen Adebisi</span>
+                    <span class="block gradient-text mt-2">Software Engineer</span>
                 </h1>
-                <p class="text-gray-400 text-lg max-w-2xl">
-                    I'm a passionate Full Stack Web Developer based in **Lagos, Nigeria**, specializing in building
-                    robust, scalable, and visually compelling applications using modern frameworks like **React, Vue,
-                    and Flask**. My focus is on delivering high-quality user experiences and clean, maintainable code.
+                <p class="text-slate-400 text-lg max-w-2xl leading-relaxed">
+                    Full Stack Developer based in <span class="text-indigo-400 font-semibold">Lagos, Nigeria</span>,
+                    crafting robust and visually stunning applications with React, Vue, and Flask. I transform ideas
+                    into elegant, scalable solutions.
                 </p>
-                <div class="flex flex-wrap gap-4 pt-4">
+                <div class="flex flex-wrap gap-4 pt-6">
                     <a href="#projects"
-                        class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300 transform hover:scale-[1.02]">
+                        class="btn-primary inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-white shadow-lg transform hover:scale-105">
+                        <i data-lucide="rocket" class="w-5 h-5 mr-2"></i>
                         View Projects
                     </a>
                     <a href="#contact"
-                        class="inline-flex items-center justify-center px-6 py-3 border border-indigo-500 text-base font-medium rounded-xl text-indigo-400 hover:bg-indigo-900 transition duration-300">
+                        class="inline-flex items-center justify-center px-8 py-4 border-2 border-indigo-500 text-base font-bold rounded-xl text-indigo-400 hover:bg-indigo-500/10 transition duration-300">
+                        <i data-lucide="mail" class="w-5 h-5 mr-2"></i>
                         Get in Touch
                     </a>
                 </div>
-                <!-- Social Icons -->
-                <div class="flex space-x-6 pt-6 text-2xl text-gray-500">
-                    <a href="mailto:adebisiqueen231@gmail.com" class="hover:text-indigo-400 transition duration-300"
-                        aria-label="Email"><i data-lucide="mail"></i></a>
+                <div class="flex space-x-6 pt-8">
+                    <a href="mailto:adebisiqueen231@gmail.com"
+                        class="p-3 bg-slate-800/50 rounded-xl hover:bg-indigo-600 transition duration-300 transform hover:scale-110"
+                        aria-label="Email">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </a>
                     <a href="https://github.com/Syntax-Queen" target="_blank"
-                        class="hover:text-indigo-400 transition duration-300" aria-label="GitHub"><i
-                            data-lucide="github"></i></a>
+                        class="p-3 bg-slate-800/50 rounded-xl hover:bg-indigo-600 transition duration-300 transform hover:scale-110"
+                        aria-label="GitHub">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </a>
                     <a href="https://teamlaunchly.space" target="_blank"
-                        class="hover:text-indigo-400 transition duration-300" aria-label="Website"><i
-                            data-lucide="globe"></i></a>
-                    <a href="https://wa.me/2348139704781 " target="_blank"
-                        class="hover:text-indigo-400 transition duration-300" aria-label="LinkedIn"><i
-                            data-lucide="whatsapp"></i></a>
+                        class="p-3 bg-slate-800/50 rounded-xl hover:bg-indigo-600 transition duration-300 transform hover:scale-110"
+                        aria-label="Website">
+                        <i data-lucide="globe" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://wa.me/2348139704781" target="_blank"
+                        class="p-3 bg-slate-800/50 rounded-xl hover:bg-green-600 transition duration-300 transform hover:scale-110"
+                        aria-label="WhatsApp">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                    </a>
                 </div>
             </div>
-            <!-- Profile Image Placeholder -->
             <div class="md:col-span-1 flex justify-center md:justify-end">
-                <div class="w-64 h-64 bg-gray-800 rounded-full border-4 border-indigo-600 overflow-hidden shadow-2xl">
-                    <!-- Placeholder for a stylish profile image -->
-                    <img src="Queen.jpg" alt="Queen Adebisi Profile Picture" class="w-full h-full object-cover " />
+                <div class="relative floating">
+                    <div class="w-72 h-72 rounded-full overflow-hidden profile-glow border-4 border-indigo-500">
+                        <img src="Queen.jpg" alt="Queen Adebisi" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                        class="absolute -bottom-4 -right-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-4 shadow-2xl">
+                        <p class="text-sm font-bold text-white">💼 Available for hire</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 2. Projects Section -->
-        <section id="projects" class="py-12 md:py-16">
-            <h2 class="text-4xl font-bold mb-10 text-center text-white">Featured Projects</h2>
+        <!-- Projects Section -->
+        <section id="projects" class="py-16">
+            <div class="text-center mb-10">
+                <h2 class="text-5xl font-black gradient-text mb-4">Featured Projects</h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">A collection of my recent work showcasing full-stack
+                    development expertise</p>
+            </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                 <!-- Project Card 1 -->
-                <div
-                    class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform transition duration-500 hover:scale-[1.02] hover:shadow-indigo-900/50 group">
-                    <!-- Mock Image/Placeholder -->
-                    <div class="h-48 bg-indigo-900/50 flex items-center justify-center border-b border-gray-700">
-                        <i data-lucide="message-square-text" class="w-16 h-16 text-indigo-400"></i>
+                <div class="glow-card glass-effect rounded-2xl overflow-hidden">
+                    <div class="h-56 overflow-hidden bg-gradient-to-br from-indigo-900/50 to-purple-900/50">
+                        <img src="ai-screenshots.png" alt="ADC Project"
+                            class="project-image w-full h-full object-cover" />
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2 text-white">ADC - Ai Dream Chat</h3>
-                        <p class="text-gray-400 mb-4 text-sm">
-                            A full-stack, real-time AI-powered conversational application designed for sophisticated
-                            user interaction and rapid prototyping.
+                        <h3 class="text-2xl font-bold mb-3 text-white">ADC - AI Dream Chat</h3>
+                        <p class="text-slate-400 mb-4 leading-relaxed">
+                            Real-time AI conversational platform with sophisticated user interaction and WebSocket
+                            technology for instant messaging.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs font-medium bg-indigo-600 text-white px-3 py-1 rounded-full">Vue</span>
-                            <span class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Flask
-                                (Python)</span>
+                        <div class="flex flex-wrap gap-2 mb-6">
                             <span
-                                class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Netlify</span>
-                            <span class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Tailwind
-                                CSS</span>
+                                class="text-xs font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-3 py-1.5 rounded-full">Vue</span>
+                            <span
+                                class="text-xs font-semibold bg-slate-700 text-slate-300 px-3 py-1.5 rounded-full">Flask</span>
+                            <span
+                                class="text-xs font-semibold bg-slate-700 text-slate-300 px-3 py-1.5 rounded-full">WebSocket</span>
+                            <span
+                                class="text-xs font-semibold bg-slate-700 text-slate-300 px-3 py-1.5 rounded-full">Tailwind</span>
                         </div>
-                        <div class="flex justify-between items-center pt-2">
-                            <a href="#" target="_blank"
-                                class="text-indigo-400 hover:text-indigo-300 flex items-center text-sm font-medium">
-                                <i data-lucide="link" class="w-4 h-4 mr-2"></i> Live Demo
+                        <div class="flex justify-between items-center">
+                            <a href="https://youtu.be/gLpd5UGjjNE" target="_blank"
+                                class="text-indigo-400 hover:text-indigo-300 flex items-center font-semibold group">
+                                <i data-lucide="external-link"
+                                    class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform"></i>
+                                Live Demo
                             </a>
-                            <a href="https://github.com/Syntax-Queen" target="_blank"
-                                class="text-gray-400 hover:text-white flex items-center text-sm">
-                                <i data-lucide="github" class="w-4 h-4"></i>
+                            <a href="https://github.com/Syntax-Queen/ADC-Backend.git" target="_blank"
+                                class="text-slate-400 hover:text-white transition duration-300">
+                                <i data-lucide="github" class="w-5 h-5"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project Card 2 -->
-                <div
-                    class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform transition duration-500 hover:scale-[1.02] hover:shadow-indigo-900/50 group">
-                    <div class="h-48 bg-pink-900/50 flex items-center justify-center border-b border-gray-700">
-                        <!-- <i data-lucide="users" class="w-16 h-16 text-pink-400"></i> -->
-                        <img src="launchly.png" alt="Queen Adebisi Website Picture"
-                            class="w-full h-full object-cover " />
+                <div class="glow-card glass-effect rounded-2xl overflow-hidden">
+                    <div class="h-56 overflow-hidden bg-gradient-to-br from-pink-900/50 to-rose-900/50">
+                        <img src="launchly.png" alt="Launchly Project"
+                            class="project-image w-full h-full object-cover" />
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2 text-white">Launchly Team Portal</h3>
-                        <p class="text-gray-400 mb-4 text-sm">
-                            Launchly is a modern e-commerce agency that builds high converting websites for fashion,
-                            supermarkets, and skincare brands focused on sleek design, seamless user experience, and
-                            data-driven conversion optimization.
+                        <h3 class="text-2xl font-bold mb-3 text-white">Launchly Agency</h3>
+                        <p class="text-slate-400 mb-4 leading-relaxed">
+                            Modern e-commerce agency platform building high-converting websites with sleek design and
+                            data-driven optimization.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs font-medium bg-pink-600 text-white px-3 py-1 rounded-full">React</span>
+                        <div class="flex flex-wrap gap-2 mb-6">
                             <span
-                                class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Bootstrap</span>
+                                class="text-xs font-semibold bg-gradient-to-r from-pink-600 to-rose-600 text-white px-3 py-1.5 rounded-full">React</span>
                             <span
-                                class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">PostgreSQL</span>
+                                class="text-xs font-semibold bg-slate-700 text-slate-300 px-3 py-1.5 rounded-full">Bootstrap</span>
                             <span
-                                class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Docker</span>
+                                class="text-xs font-semibold bg-slate-700 text-slate-300 px-3 py-1.5 rounded-full">PostgreSQL</span>
+                            <span
+                                class="text-xs font-semibold bg-slate-700 text-slate-300 px-3 py-1.5 rounded-full">Docker</span>
                         </div>
-                        <div class="flex justify-between items-center pt-2">
+                        <div class="flex justify-between items-center">
                             <a href="https://teamlaunchly.space" target="_blank"
-                                class="text-pink-400 hover:text-pink-300 flex items-center text-sm font-medium">
-                                <i data-lucide="link" class="w-4 h-4 mr-2"></i> Live Demo
+                                class="text-pink-400 hover:text-pink-300 flex items-center font-semibold group">
+                                <i data-lucide="external-link"
+                                    class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform"></i>
+                                Live Demo
                             </a>
                             <a href="https://github.com/Syntax-Queen" target="_blank"
-                                class="text-gray-400 hover:text-white flex items-center text-sm">
-                                <i data-lucide="github" class="w-4 h-4"></i>
+                                class="text-slate-400 hover:text-white transition duration-300">
+                                <i data-lucide="github" class="w-5 h-5"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project Card 3 -->
-                <div
-                    class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform transition duration-500 hover:scale-[1.02] hover:shadow-indigo-900/50 group">
-                    <div class="h-48 bg-purple-900/50 flex items-center justify-center border-b border-gray-700">
-                        <i data-lucide="server" class="w-16 h-16 text-purple-400"></i>
+                <div class="glow-card glass-effect rounded-2xl overflow-hidden">
+                    <div class="h-56 overflow-hidden bg-gradient-to-br from-purple-900/50 to-violet-900/50">
+                        <img src="documentation-screenshots.png" alt="Documentation Project"
+                            class="project-image w-full h-full object-cover" />
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2 text-white">Scalable E-Commerce API</h3>
-                        <p class="text-gray-400 mb-4 text-sm">
-                            A robust and highly scalable RESTful API built to handle high-volume transactions for a
-                            multi-vendor e-commerce platform.
+                        <h3 class="text-2xl font-bold mb-3 text-white">Technical Documentation</h3>
+                        <p class="text-slate-400 mb-4 leading-relaxed">
+                            Comprehensive project documentation showcasing technical processes, architecture decisions,
+                            and structured insights.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
+                        <div class="flex flex-wrap gap-2 mb-6">
                             <span
-                                class="text-xs font-medium bg-purple-600 text-white px-3 py-1 rounded-full">Python</span>
-                            <span class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Flask
-                            </span>
+                                class="text-xs font-semibold bg-gradient-to-r from-purple-600 to-violet-600 text-white px-3 py-1.5 rounded-full">Python</span>
                             <span
-                                class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">Redis</span>
-                            <span class="text-xs font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-full">AWS
-                                S3</span>
+                                class="text-xs font-semibold bg-slate-700 text-slate-300 px-3 py-1.5 rounded-full">Flask</span>
+                            <span
+                                class="text-xs font-semibold bg-slate-700 text-slate-300 px-3 py-1.5 rounded-full">WebSocket</span>
+                            <span
+                                class="text-xs font-semibold bg-slate-700 text-slate-300 px-3 py-1.5 rounded-full">Payment
+                                APIs</span>
                         </div>
-                        <div class="flex justify-between items-center pt-2">
-                            <a href="#" target="_blank"
-                                class="text-purple-400 hover:text-purple-300 flex items-center text-sm font-medium">
-                                <i data-lucide="code" class="w-4 h-4 mr-2"></i> Documentation
+                        <div class="flex justify-between items-center">
+                            <a href="https://all-documentation.netlify.app/" target="_blank"
+                                class="text-purple-400 hover:text-purple-300 flex items-center font-semibold group">
+                                <i data-lucide="book-open"
+                                    class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform"></i>
+                                View Docs
                             </a>
                             <a href="https://github.com/Syntax-Queen" target="_blank"
-                                class="text-gray-400 hover:text-white flex items-center text-sm">
-                                <i data-lucide="github" class="w-4 h-4"></i>
+                                class="text-slate-400 hover:text-white transition duration-300">
+                                <i data-lucide="github" class="w-5 h-5"></i>
                             </a>
                         </div>
                     </div>
@@ -233,188 +355,270 @@
             </div>
         </section>
 
-        <!-- 3. Skills Section -->
-        <section id="skills" class="py-12 md:py-16 border-t border-gray-800 mt-12">
-            <h2 class="text-4xl font-bold mb-10 text-center text-white">Core Skills & Technologies</h2>
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 mt-16">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black gradient-text mb-4">Skills & Technologies</h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">Building modern applications with cutting-edge tools
+                </p>
+            </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Frontend -->
-                <div class="p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-indigo-900/50 transition duration-300">
-                    <i data-lucide="layout-grid" class="w-8 h-8 text-indigo-400 mb-3"></i>
-                    <h4 class="text-xl font-semibold text-white mb-2">Frontend</h4>
-                    <ul class="space-y-1 text-gray-400 text-sm">
-                        <li>React & Redux</li>
-                        <li>Vue.js & VueX</li>
-                        <li>Tailwind CSS, Bootstrap</li>
-                        <li>JavaScript (ES6+), TypeScript</li>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div
+                    class="skill-card p-8 rounded-2xl hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-2">
+                    <div
+                        class="bg-gradient-to-br from-indigo-600 to-purple-600 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="layout" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Frontend</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li class="flex items-center"><span
+                                class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span>React & Redux</li>
+                        <li class="flex items-center"><span
+                                class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span>Vue.js & VueX</li>
+                        <li class="flex items-center"><span
+                                class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span>Tailwind CSS, Bootstrap</li>
+                        <li class="flex items-center"><span
+                                class="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span>JavaScript, TypeScript</li>
                     </ul>
                 </div>
-                <!-- Backend -->
-                <div class="p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-indigo-900/50 transition duration-300">
-                    <i data-lucide="server" class="w-8 h-8 text-pink-400 mb-3"></i>
-                    <h4 class="text-xl font-semibold text-white mb-2">Backend</h4>
-                    <ul class="space-y-1 text-gray-400 text-sm">
-                        <li>Flask (Python)</li>
-                        <li>System Design</li>
-                        <li>RESTful API Design</li>
-                        <li>Authentication (JWT)</li>
+
+                <div
+                    class="skill-card p-8 rounded-2xl hover:border-pink-500 transition-all duration-300 transform hover:-translate-y-2">
+                    <div
+                        class="bg-gradient-to-br from-pink-600 to-rose-600 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="server" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Backend</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li class="flex items-center"><span
+                                class="w-1.5 h-1.5 bg-pink-500 rounded-full mr-2"></span>Flask (Python)</li>
+                        <li class="flex items-center"><span
+                                class="w-1.5 h-1.5 bg-pink-500 rounded-full mr-2"></span>System Design</li>
+                        <li class="flex items-center"><span
+                                class="w-1.5 h-1.5 bg-pink-500 rounded-full mr-2"></span>RESTful API Design</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-pink-500 rounded-full mr-2"></span>JWT
+                            Authentication</li>
                     </ul>
                 </div>
-                <!-- Database & DevOps -->
-                <div class="p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-indigo-900/50 transition duration-300">
-                    <i data-lucide="database" class="w-8 h-8 text-purple-400 mb-3"></i>
-                    <h4 class="text-xl font-semibold text-white mb-2">Database / DevOps</h4>
-                    <ul class="space-y-1 text-gray-400 text-sm">
-                        <li>PostgreSQL, SQL</li>
-                        <li>Apache, Sqlite</li>
-                        <li>AWS (S3, EC2, Lambda)</li>
-                        <li>Git & CI/CD</li>
+
+                <div
+                    class="skill-card p-8 rounded-2xl hover:border-purple-500 transition-all duration-300 transform hover:-translate-y-2">
+                    <div
+                        class="bg-gradient-to-br from-purple-600 to-violet-600 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="database" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Database & DevOps</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li class="flex items-center"><span
+                                class="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></span>PostgreSQL, SQLite</li>
+                        <li class="flex items-center"><span
+                                class="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></span>Apache Server</li>
+                        <li class="flex items-center"><span
+                                class="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></span>AWS (S3, EC2, Lambda)</li>
+                        <li class="flex items-center"><span
+                                class="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></span>Git & CI/CD</li>
                     </ul>
                 </div>
-                <!-- General -->
-                <div class="p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-indigo-900/50 transition duration-300">
-                    <i data-lucide="code" class="w-8 h-8 text-green-400 mb-3"></i>
-                    <h4 class="text-xl font-semibold text-white mb-2">Testing</h4>
-                    <ul class="space-y-1 text-gray-400 text-sm">
-                        <li>PostMan</li>
-                        <li>Insomia</li>
-                        <li>Code Review</li>
-                        <li>Performance Optimization</li>
+
+                <div
+                    class="skill-card p-8 rounded-2xl hover:border-green-500 transition-all duration-300 transform hover:-translate-y-2">
+                    <div
+                        class="bg-gradient-to-br from-green-600 to-emerald-600 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="check-circle" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Testing & Tools</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li class="flex items-center"><span
+                                class="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>Postman</li>
+                        <li class="flex items-center"><span
+                                class="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>Insomnia</li>
+                        <li class="flex items-center"><span
+                                class="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>Code Review</li>
+                        <li class="flex items-center"><span
+                                class="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>Performance Optimization</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Experience Section (Placeholder Structure) -->
-        <section id="experience" class="py-12 md:py-16 border-t border-gray-800 mt-12">
-            <h2 class="text-4xl font-bold mb-10 text-center text-white">Work Experience</h2>
-
-            <!-- Timeline Item 1 -->
-            <div class="relative max-w-4xl mx-auto border-l-4 border-indigo-600 pl-8 pb-10">
-                <span class="absolute -left-2 top-0 w-4 h-4 bg-indigo-600 rounded-full"></span>
-                <p class="text-lg font-semibold text-white">Full Stack Developer</p>
-                <p class="text-indigo-400 text-sm">Evu Ventures | 2025 - Present</p>
-                <p class="text-gray-400 mt-2">
-                    A web development company specializing in creating responsive, user centered applications. Designed
-                    and prototyped a freelance job matching platform in Figma, then developed its frontend using React,
-                    HTML, CSS, and JavaScript in collaboration with cross-functional teams to align design and business
-                    objectives.
-
-                </p>
+        <!-- Experience Section -->
+        <section id="experience" class="py-16 mt-16">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black gradient-text mb-4">Work Experience</h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">My professional journey in software development</p>
             </div>
 
-            <!-- Timeline Item 2 -->
-            <div class="relative max-w-4xl mx-auto border-l-4 border-gray-700 pl-8 pb-10">
-                <span class="absolute -left-2 top-0 w-4 h-4 bg-gray-700 rounded-full"></span>
-                <p class="text-lg font-semibold text-white">Software Engineer & Technical Instructor</p>
-                <p class="text-indigo-400 text-sm">Pediforte | 2024 - 2025</p>
-                <p class="text-gray-400 mt-2">
-                    A coding academy providing Python, SQL, and system design training, mentoring students in real world
-                    application development and industry-ready projects.
-                </p>
-            </div>
-            <!-- Timeline Item 3 -->
+            <div class="max-w-4xl mx-auto space-y-12">
+                <div class="relative pl-8 border-l-2 border-indigo-600">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-indigo-600 rounded-full timeline-dot"></div>
+                    <div
+                        class="glass-effect rounded-xl p-6 hover:border-indigo-500 border border-slate-700/50 transition-all duration-300">
+                        <h3 class="text-2xl font-bold text-white mb-1">Full Stack Developer</h3>
+                        <p class="text-indigo-400 font-semibold mb-3">Evu Ventures | 2025 - Present</p>
+                        <p class="text-slate-400 leading-relaxed">
+                            Designed and developed a freelance job matching platform using React and Figma. Collaborated
+                            with cross-functional teams to create responsive, user-centered applications aligned with
+                            business objectives.
+                        </p>
+                    </div>
+                </div>
 
-            <div class="relative max-w-4xl mx-auto border-l-4 border-gray-700 pl-8 pb-10">
-                <span class="absolute -left-2 top-0 w-4 h-4 bg-gray-700 rounded-full"></span>
-                <p class="text-lg font-semibold text-white">Full Stack Software Engineer & SaaS Solutions
-                    Developer</p>
-                <p class="text-indigo-400 text-sm">Freelance | 2023 - 2025</p>
-                <p class="text-gray-400 mt-2">
-                  Freelance full stack developer specializing in SaaS solutions, creating responsive, high converting websites and scalable platforms that enhance user experience and drive business growth.
+                <div class="relative pl-8 border-l-2 border-purple-600">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-purple-600 rounded-full timeline-dot"></div>
+                    <div
+                        class="glass-effect rounded-xl p-6 hover:border-purple-500 border border-slate-700/50 transition-all duration-300">
+                        <h3 class="text-2xl font-bold text-white mb-1">Software Engineer & Technical Instructor</h3>
+                        <p class="text-purple-400 font-semibold mb-3">Pediforte | 2024 - 2025</p>
+                        <p class="text-slate-400 leading-relaxed">
+                            Provided comprehensive training in Python, SQL, and system design. Mentored students in
+                            real-world application development and prepared them for industry-ready projects.
+                        </p>
+                    </div>
+                </div>
 
-                </p>
+                <div class="relative pl-8 border-l-2 border-pink-600">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-pink-600 rounded-full timeline-dot"></div>
+                    <div
+                        class="glass-effect rounded-xl p-6 hover:border-pink-500 border border-slate-700/50 transition-all duration-300">
+                        <h3 class="text-2xl font-bold text-white mb-1">Personal Assistant || Learn Website Developemnt
+                        </h3>
+                        <p class="text-pink-400 font-semibold mb-3">Freelance | 2023 - 2024</p>
+                        <p class="text-slate-400 leading-relaxed">
+                            Served as a personal assistant to a fintech CTO while simultaneously learning website
+                            development, gaining hands-on experience in tech operations and coding.
+
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- 5. Contact Section -->
-        <section id="contact" class="py-12 md:py-16 border-t border-gray-800 mt-12 text-center">
-            <h2 class="text-4xl font-bold mb-4 text-white">Let's build something great.</h2>
-            <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-                Whether you have a job opportunity, a collaboration idea, or just want to connect, feel free to reach
-                out!
-            </p>
-
-            <a href="mailto:adebisiqueen231@gmail.com"
-                class="inline-flex items-center justify-center px-8 py-4 border-2 border-indigo-600 text-lg font-bold rounded-xl shadow-lg text-white bg-indigo-600 hover:bg-indigo-700 hover:border-indigo-700 transition duration-300 transform hover:scale-[1.05]">
-                <i data-lucide="send" class="w-6 h-6 mr-3"></i> Send Me an Email
-            </a>
-
-            <!-- Quick Contact Links -->
-            <div class="flex justify-center flex-wrap gap-6 mt-10 text-lg">
-                <p class="text-gray-300 flex items-center">
-                    <i data-lucide="phone" class="w-5 h-5 mr-2 text-indigo-400"></i>
-                    Lagos, Nigeria
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 mt-16 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-5xl font-black gradient-text mb-6">Let's Build Something Amazing</h2>
+                <p class="text-xl text-slate-400 mb-10 leading-relaxed">
+                    Have a project in mind or looking for a talented developer? I'm always open to discussing new
+                    opportunities and collaborations.
                 </p>
-                <a href="https://github.com/Syntax-Queen" target="_blank"
-                    class="text-gray-300 hover:text-indigo-400 flex items-center transition duration-300">
-                    <i data-lucide="github" class="w-5 h-5 mr-2 text-indigo-400"></i>
-                    @Syntax-Queen
+
+                <a href="mailto:adebisiqueen231@gmail.com"
+                    class="btn-primary inline-flex items-center justify-center px-10 py-5 text-lg font-bold rounded-xl text-white shadow-2xl transform hover:scale-105 mb-12">
+                    <i data-lucide="send" class="w-6 h-6 mr-3"></i>
+                    Send Me an Email
                 </a>
+
+                <div class="flex justify-center flex-wrap gap-8 text-lg">
+                    <div class="flex items-center text-slate-300">
+                        <div class="bg-indigo-600/20 p-3 rounded-lg mr-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-indigo-400"></i>
+                        </div>
+                        <span>Lagos, Nigeria</span>
+                    </div>
+                    <a href="https://github.com/Syntax-Queen" target="_blank"
+                        class="flex items-center text-slate-300 hover:text-indigo-400 transition duration-300">
+                        <div class="bg-indigo-600/20 p-3 rounded-lg mr-3">
+                            <i data-lucide="github" class="w-5 h-5 text-indigo-400"></i>
+                        </div>
+                        <span>@Syntax-Queen</span>
+                    </a>
+                </div>
             </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 border-t border-gray-800 py-6">
-        <div class="container mx-auto px-4 text-center text-sm text-gray-500">
-            &copy; 2025 Queen Adebisi. All rights reserved. | Built with Tailwind CSS.
+    <footer class="glass-effect py-12 mt-20 border-t border-slate-700/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+            <nav class="flex justify-center space-x-6 mb-6">
+                <a href="#projects"
+                    class="text-slate-300 hover:text-indigo-400 transition duration-300 font-medium">Projects</a>
+                <a href="#skills"
+                    class="text-slate-300 hover:text-indigo-400 transition duration-300 font-medium">Skills</a>
+                <a href="#experience"
+                    class="text-slate-300 hover:text-indigo-400 transition duration-300 font-medium">Experience</a>
+                <a href="#contact"
+                    class="text-slate-300 hover:text-indigo-400 transition duration-300 font-medium">Contact</a>
+            </nav>
+
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="mailto:adebisiqueen231@gmail.com"
+                    class="text-slate-400 hover:text-indigo-400 transition duration-300" aria-label="Email">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </a>
+                <a href="https://github.com/Syntax-Queen" target="_blank"
+                    class="text-slate-400 hover:text-indigo-400 transition duration-300" aria-label="GitHub">
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </a>
+                <a href="https://wa.me/2348139704781" target="_blank"
+                    class="text-slate-400 hover:text-green-400 transition duration-300" aria-label="WhatsApp">
+                    <i data-lucide="message-circle" class="w-6 h-6"></i>
+                </a>
+                <a href="https://teamlaunchly.space" target="_blank"
+                    class="text-slate-400 hover:text-indigo-400 transition duration-300" aria-label="Website">
+                    <i data-lucide="globe" class="w-6 h-6"></i>
+                </a>
+            </div>
+
+            <p class="text-slate-400 text-sm pt-4 border-t border-slate-700/30 max-w-sm mx-auto">
+                © 2025 <span class="gradient-text font-semibold">Queen Adebisi</span>. Crafted with passion and code.
+            </p>
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu & Icon Initialization -->
+            <div id="mobile-menu"
+        class="fixed inset-0 z-40 bg-slate-900/95 backdrop-blur-sm transform translate-x-full transition-transform duration-300 md:hidden">
+                <div class="flex justify-end p-4">
+                        <button id="close-mobile-menu-button"
+                class="p-2 rounded-lg hover:bg-slate-800/50 transition duration-300">
+                                <i data-lucide="x" class="w-6 h-6 text-slate-300"></i>
+                            </button>
+                    </div>
+                <nav class="flex flex-col items-center space-y-8 text-xl pt-10">
+                        <a href="#projects" class="text-slate-300 hover:text-white transition duration-300 font-medium"
+                data-link>Projects</a>
+                        <a href="#skills" class="text-slate-300 hover:text-white transition duration-300 font-medium"
+                data-link>Skills</a>
+                        <a href="#experience"
+                class="text-slate-300 hover:text-white transition duration-300 font-medium" data-link>Experience</a>
+                        <a href="#contact" class="text-slate-300 hover:text-white transition duration-300 font-medium"
+                data-link>Contact</a>
+                    </nav>
+            </div>
+
+       
     <script>
-        // Initialize Lucide Icons
+        // Initialize Lucide icons
         lucide.createIcons();
 
-        // Mobile menu toggle logic
+        // Mobile Menu Functionality
         const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const navLinks = document.querySelector('nav');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = mobileMenu.querySelectorAll('[data-link]');
 
-        // NOTE: Since the current design is desktop-first, we'd typically create a modal/off-canvas menu for mobile.
-        // For simplicity in this single file, let's just make the desktop links show/hide on button click for mobile.
-        // In a real app, you'd use a dedicated mobile menu component.
-
-        // Adding a basic mobile menu overlay for functionality
-        document.body.insertAdjacentHTML('beforeend', `
-            <div id="mobile-menu-overlay" class="fixed inset-0 bg-gray-900 z-40 hidden md:hidden p-8">
-                <button id="close-menu-button" class="absolute top-4 right-4 p-2 rounded-lg hover:bg-gray-800 transition duration-300">
-                    <i data-lucide="x" class="w-6 h-6 text-gray-300"></i>
-                </button>
-                <div class="flex flex-col space-y-8 mt-16 text-center text-2xl font-semibold">
-                    <a href="#projects" class="text-gray-300 hover:text-indigo-400 transition duration-300" onclick="closeMobileMenu()">Projects</a>
-                    <a href="#skills" class="text-gray-300 hover:text-indigo-400 transition duration-300" onclick="closeMobileMenu()">Skills</a>
-                    <a href="#experience" class="text-gray-300 hover:text-indigo-400 transition duration-300" onclick="closeMobileMenu()">Experience</a>
-                    <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition duration-300" onclick="closeMobileMenu()">Contact</a>
-                </div>
-            </div>
-        `);
-
-        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-        const closeMenuButton = document.getElementById('close-menu-button');
-
-        // Re-initialize icons for the new content
-        lucide.createIcons();
-
-        function openMobileMenu() {
-            mobileMenuOverlay.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        function toggleMobileMenu() {
+            if (mobileMenu.classList.contains('translate-x-full')) {
+                // Open menu
+                mobileMenu.classList.remove('translate-x-full');
+            } else {
+                // Close menu
+                mobileMenu.classList.add('translate-x-full');
+            }
         }
 
-        function closeMobileMenu() {
-            mobileMenuOverlay.classList.add('hidden');
-            document.body.style.overflow = '';
-        }
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+        closeMobileMenuButton.addEventListener('click', toggleMobileMenu);
 
-        mobileMenuButton.addEventListener('click', openMobileMenu);
-        closeMenuButton.addEventListener('click', closeMobileMenu);
-
-        // Ensure menu closes if a link inside it is clicked
-        mobileMenuOverlay.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
+        // Close menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
         });
-
     </script>
 </body>
 
